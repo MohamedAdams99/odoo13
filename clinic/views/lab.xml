@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="lab_from_view" model="ir.ui.view">
+           <field name="name">lap.from.view</field>
+           <field name="model">hospital.lab</field>
+           <field name="arch" type="xml">
+               <form string="Lab">
+                   <sheet>
+                       <group>
+                           <field name="name"/>
+                       </group>
+                       <group>
+                           <field name="user_id"/>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="lab_tree_view" model="ir.ui.view">
+            <field name="name">lab_tree_view</field>
+            <field name="model">hospital.lab</field>
+            <field name="arch" type="xml">
+                <tree string="Lab">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lab" model="ir.actions.act_window">
+            <field name="name">Lab</field>
+            <field name="res_model">hospital.lab</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="lab" name="Lab" parent="hospital_root" action="action_lab" sequence="5"/>
+
+
+    </data>
+</odoo>

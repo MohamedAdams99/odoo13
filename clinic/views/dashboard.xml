@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="act_patient_appointment" model="ir.actions.act_window">
+        <field name="name">Patients Appointments</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="clinic.appointment_graph_view"/>
+    </record>
+
+    <record id="act_book_appointment" model="ir.actions.act_window">
+        <field name="name">Book Appointments</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="clinic.appointment_calendar_view"/>
+    </record>
+
+    <record id="act_patient_list" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="dashboard_form_view" model="ir.ui.view">
+        <field name="name">Dashboard Form</field>
+        <field name="model">board.board</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <board style="1-2">
+                    <column>
+                        <action string="Patient Appointments" name="%('clinic.act_patient_appointment')d"/>
+                        <action string="Patients" name="%('act_patient_list')d"/>
+                    </column>
+                    <column>
+                        <action string="Book Appointments" name="%('clinic.act_book_appointment')d"/>
+                    </column>
+
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hospital_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="dashboard_form_view"/>
+        <field name="usage">menu</field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="menu_dashboard" name="Dashboard" parent="clinic.hospital_root" action="action_hospital_dashboard" sequence="1"/>
+</odoo>

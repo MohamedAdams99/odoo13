@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+{
+    'name': 'hosssssssssss',
+    'version': '13.0.1.0.2',
+    'category': '',
+    'summary': '',
+    'author': '',
+    'license': 'LGPL-3',
+    'company': 'Odoo Mates',
+    'maintainer': 'Odoo Mates',
+    'support': 'odoomates@gmail.com',
+    'website': '',
+    'depends': ['base', 'mail', 'sale', 'board' ],
+    'demo': [],
+    'data': [
+        'security/ir.model.access.csv',
+        # 'security/security.xml',
+        'data/sequence.xml',
+        'data/mail_template.xml',
+        'data/cron.xml',
+        'wizards/create_appointment.xml',
+        'views/patient.xml',
+        'views/appointment.xml',
+        'views/doctor.xml',
+        'views/lab.xml',
+        'views/settings.xml',
+        # 'views/dashboard.xml',
+        'reports/patient_card.xml',
+        'reports/report.xml',
+        'reports/sale_order_inherit.xml',
+        'reports/appointment.xml',
+
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'qweb': [],
+}
